@@ -65,8 +65,8 @@ if authentication_status == True:
 
   Data_tab, Detection_tab, Report_tab = st.tabs([" ## Training Data", "## Recycling Detection", "## Field Trial"])
   #-- sidebar
-#  authenticator.logout("Logout", "sidebar")
-#  st.sidebar.title(f"Welcome {name}")
+  authenticator.logout("Logout", "sidebar")
+  st.sidebar.title(f"Welcome {name}")
   st.sidebar.markdown("## :blue[User Information] ")
   selected_patient = st.sidebar.text_input(':green[Name/ID]', value = 'self')
   selected_date = st.sidebar.date_input(':green[Date of Use]', value="today")
