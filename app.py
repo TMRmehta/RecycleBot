@@ -68,12 +68,12 @@ if authentication_status == True:
   authenticator.logout("Logout", "sidebar")
   st.sidebar.title(f"Welcome {name}")
   st.sidebar.markdown("## :blue[User Information] ")
-  selected_patient = st.sidebar.text_input(':green[Name/ID]', value = 'self')
+  selected_patient = st.sidebar.text_input(':green[Name/ID]', value = name)
   selected_date = st.sidebar.date_input(':green[Date of Use]', value="today")
-  selected_history = st.sidebar.button(':green[Retrieve Previous Scans and Results]')
+  #selected_history = st.sidebar.button(':green[Retrieve Previous Scans and Results]')
   st.sidebar.markdown("## :blue[Model Selector and Parameters] ")
   #-- Choose Diagnosis Type as Detection or Classification
-  Selected_Analysis = st.sidebar.selectbox(':green[Analysis Type]', ['Screening', 'Classification'])
+  Selected_Analysis = st.sidebar.selectbox(':green[Analysis Type]', ['Classification', 'Visual Screening'])
   #-- Choose Model
   selected_model = st.sidebar.selectbox('Model', ['VGG16', 'KNC-VGG16'])
   Model_Metrics_Selection = st.sidebar.checkbox(':green[Show Model Performance Metrics]')
