@@ -139,7 +139,7 @@ if authentication_status == True:
         pred = np.argmax(ypred, axis=1)
         pred_prob = ypred
       st.write("<h4 style='text-align: left; color: blue;'>For the uploaded image shown above, selected model was used to perform the screening analysis.</h4>", unsafe_allow_html = True)
-      if (Selected_Analysis == 'Screening'):
+      if (Selected_Analysis == 'Classification'):
         if pred_prob[0][0] > 0.5:
           prob = 100*pred_prob[0][0]
           st.write(f"<h4 style='text-align: left; color: orange;'>This specific object can be **Recycled** with a probability of {prob:.2f}%.</h4>", unsafe_allow_html=True)
