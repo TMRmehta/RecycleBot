@@ -73,24 +73,25 @@ if authentication_status == True:
   #selected_history = st.sidebar.button(':green[Retrieve Previous Scans and Results]')
   st.sidebar.markdown("## :blue[Model Selector and Parameters] ")
   #-- Choose Diagnosis Type as Detection or Classification
-  Selected_Analysis = st.sidebar.selectbox(':green[Analysis Type]', ['Classification', 'Visual Screening'])
+  Selected_Analysis = 'Classification'
+  #Selected_Analysis = st.sidebar.selectbox(':green[Analysis Type]', ['Classification', 'Visual Screening'])
   #-- Choose Model
-  selected_model = st.sidebar.selectbox('Model', ['VGG16', 'KNC-VGG16'])
+  selected_model = st.sidebar.selectbox('Model', ['VGG16', 'ResNet50'])
   Model_Metrics_Selection = st.sidebar.checkbox(':green[Show Model Performance Metrics]')
-  st.sidebar.markdown("## :blue[Explainability Parameters]")
+  #st.sidebar.markdown("## :blue[Explainability Parameters]")
   #-- Choose Explainability Type
-  selected_explainability = st.sidebar.radio(':green[Explainability Type]', ['Model Level','Object Level'])
+  #selected_explainability = st.sidebar.radio(':green[Explainability Type]', ['Model Level','Object Level'])
   #-- Choose Model
-  if (selected_explainability == 'Model Level'):
-      selected_ex_display = st.sidebar.selectbox(':green[Display]', ['Feature Importance Pareto and Heat Map','Feature Importance Pareto', 'Heat Map'])
-  else:
-      selected_ex_display = st.sidebar.selectbox(':green[Display]', ['SHAP Value PLot/Contrast Map'])
+  #if (selected_explainability == 'Model Level'):
+  #    selected_ex_display = st.sidebar.selectbox(':green[Display]', ['Feature Importance Pareto and Heat Map','Feature Importance Pareto', 'Heat Map'])
+  #else:
+  #    selected_ex_display = st.sidebar.selectbox(':green[Display]', ['SHAP Value PLot/Contrast Map'])
   #selected_save = st.sidebar.button(':green[Save Record]')
   with Data_tab:
     image = Image.open("DS1_RB.jpg")
     st.image(image)
   with Detection_tab:
-    if (Selected_Analysis == 'Screening'):
+    if (Selected_Analysis == 'Classification'):
       #Load selected model
       if (selected_model == 'VGG16'):
           Selectedmodel = load_model("RBmodel.joblib")
