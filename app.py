@@ -102,10 +102,10 @@ if authentication_status == True:
             st.image(image)
       else:
           Selectedmodel = load_model("RBmodel.joblib")
-          Model_option = 0
+          Model_option = 1
           if (Model_Metrics_Selection):
             st.subheader(':green[Model Performance Metrics]')
-            image = Image.open("Model_KNCF.jpg")
+            image = Image.open("metrics_RB.jpg")
             st.image(image)
     else:
           st.subheader(':green[Model Performance Metrics]')
