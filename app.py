@@ -105,7 +105,7 @@ if authentication_status == True:
           Model_option = 1
           if (Model_Metrics_Selection):
             st.subheader(':green[Model Performance Metrics]')
-            image = Image.open("metrics_RB.jpg")
+            image = Image.open("metrics1_RB.jpg")
             st.image(image)
     else:
           st.subheader(':green[Model Performance Metrics]')
